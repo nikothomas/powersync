@@ -19,16 +19,6 @@ services:
       - default
       - supabase_network_powersync_demo
 
-  demo-client:
-    build:
-      dockerfile: demo-client.dockerfile
-      args:
-        VITE_SUPABASE_URL: ${SUPABASE_URL}
-        VITE_SUPABASE_ANON_KEY: ${SUPABASE_ANON_KEY}
-        VITE_POWERSYNC_URL: http://localhost:${PS_PORT}
-    ports:
-      - 4170:4173
-
 # Supabase exposes their services on this network
 networks:
   # This is derived from `supabase_network_${project_id}`

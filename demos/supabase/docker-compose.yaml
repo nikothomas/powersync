@@ -8,7 +8,7 @@ services:
   # Extend PowerSync with Mongo healthchecks
   powersync:
     extends:
-      file: ../../services/powersync.yaml
+      file: ./powersync.yaml
       service: powersync
     depends_on:
       mongo-rs-init:
